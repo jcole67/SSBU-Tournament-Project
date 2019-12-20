@@ -11,7 +11,7 @@ using namespace std;
 //Function prototypes
 void shuffle_players(vector<string>names);
 int show_menu(vector<string>names, vector<int>wins, vector<int>kills, int total);
-void display_scores();
+void display_scores(vector<string>names, vector<int>wins, vector<int>kills, int total);
 void enter_wins(vector<string>names, vector<int>wins, int total);
 void enter_kills(vector<string>names, vector<int>kills, int total);
 
@@ -45,10 +45,11 @@ int main()
     int show_menu_choice;
     do
     {
-    show_menu_choice = show_menu(player_names, player_wins, player_kills, total_players);
+        show_menu_choice = show_menu(player_names, player_wins, player_kills, total_players);
+        display_scores(player_names, player_wins, player_kills, total_players);
     } while (show_menu_choice != 4);
     
-	return 0;
+    return 0;
 }
 
 //Function: Display menu options
@@ -83,15 +84,22 @@ int show_menu(vector<string>names, vector<int>wins, vector<int>kills, int total)
     else
     {
         cout << "Invalid selection, please try again." << endl;
+        cout << endl;
     }
     
     return menu_choice;
 }
 
 //Function: Display current standings
-void display_scores()
+void display_scores(vector<string>names, vector<int>wins, vector<int>kills, int total)
 {
     cout << "Current Standings:" << endl;
+    for (int i = 0; i < total; i++)
+	{
+		cout << (i + 1) << ". " << names[i] << endl;
+		cout << "[Wins - " << wins[i] << ", Kills - " << kills[i] << "]" << endl;
+	}
+    cout << endl;
 }
 
 //Function: Shuffle player order and display
@@ -118,12 +126,21 @@ void enter_wins(vector<string>names, vector<int>wins, int total)
 	{
 		cout << (i + 1) << ". " << names[i] << endl;
 	}
+	cout << "Select and Press Enter: ";
 	cin >> menu_choice;
     cout << endl;
 }
 
-//Function: Display kill data
+//Function: Enter kill data
 void enter_kills(vector<string>names, vector<int>kills, int total)
 {
-    cout << "Enter Kills" << endl;
+    int menu_choice;
+    cout << "Please select a player to add 1 kill:" << endl;
+    for (int i = 0; i < total; i++)
+	{
+		cout << (i + 1) << ". " << names[i] << endl;
+	}
+	cout << "Select and Press Enter: ";
+	cin >> menu_choice;
+    cout << endl;
 }
