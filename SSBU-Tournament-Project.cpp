@@ -120,14 +120,75 @@ void shuffle_players(vector<string>names)
 //Function: Enter win data
 void enter_wins(vector<string>names, vector<int>wins, int total)
 {
-    int menu_choice;
-    cout << "Please select a player to add 1 win:" << endl;
+    int menu_choice, num_wins;
+    cout << "Please select a player:" << endl;
     for (int i = 0; i < total; i++)
 	{
 		cout << (i + 1) << ". " << names[i] << endl;
 	}
 	cout << "Select and Press Enter: ";
 	cin >> menu_choice;
+	cout << endl;
+	if (menu_choice == 1)
+	{
+	    cout << "How many wins would you like to add for " << names[0] << "?" << endl;
+	    cout << "Select and Press Enter: ";
+	    cin >> num_wins;
+	    wins[0] = wins[0] + num_wins;
+	}
+	else if (menu_choice == 2)
+	{
+	    cout << "How many wins would you like to add for " << names[1] << "?" << endl;
+	    cout << "Select and Press Enter: ";
+	    cin >> num_wins;
+	    wins[1] = wins[1] + num_wins;
+	}
+	else if (menu_choice == 3)
+	{
+	    cout << "How many wins would you like to add for " << names[2] << "?" << endl;
+	    cout << "Select and Press Enter: ";
+	    cin >> num_wins;
+	    wins[2] = wins[2] + num_wins;
+	}
+	else if (menu_choice == 4)
+	{
+	    cout << "How many wins would you like to add for " << names[3] << "?" << endl;
+	    cout << "Select and Press Enter: ";
+	    cin >> num_wins;
+	    wins[3] = wins[3] + num_wins;
+	}
+	else if (menu_choice == 5)
+	{
+	    cout << "How many wins would you like to add for " << names[4] << "?" << endl;
+	    cout << "Select and Press Enter: ";
+	    cin >> num_wins;
+	    wins[4] = wins[4] + num_wins;
+	}
+	else if (menu_choice == 6)
+	{
+	    cout << "How many wins would you like to add for " << names[5] << "?" << endl;
+	    cout << "Select and Press Enter: ";
+	    cin >> num_wins;
+	    wins[5] = wins[5] + num_wins;
+	}
+	else if (menu_choice == 7)
+	{
+	    cout << "How many wins would you like to add for " << names[6] << "?" << endl;
+	    cout << "Select and Press Enter: ";
+	    cin >> num_wins;
+	    wins[6] = wins[6] + num_wins;
+	}
+	else if (menu_choice == 8)
+	{
+	    cout << "How many wins would you like to add for " << names[7] << "?" << endl;
+	    cout << "Select and Press Enter: ";
+	    cin >> num_wins;
+	    wins[7] = wins[7] + num_wins;
+	}
+	else
+	{
+        cout << "Invalid selection, please try again." << endl;
+	}
     cout << endl;
 }
 
@@ -135,7 +196,7 @@ void enter_wins(vector<string>names, vector<int>wins, int total)
 void enter_kills(vector<string>names, vector<int>kills, int total)
 {
     int menu_choice;
-    cout << "Please select a player to add 1 kill:" << endl;
+    cout << "Please select a player:" << endl;
     for (int i = 0; i < total; i++)
 	{
 		cout << (i + 1) << ". " << names[i] << endl;
