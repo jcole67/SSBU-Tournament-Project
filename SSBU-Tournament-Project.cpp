@@ -46,8 +46,7 @@ int main()
     do
     {
         show_menu_choice = show_menu(player_names, player_wins, player_kills, total_players);
-        display_scores(player_names, player_wins, player_kills, total_players);
-    } while (show_menu_choice != 4);
+    } while (show_menu_choice != 5);
     
     return 0;
 }
@@ -57,27 +56,31 @@ int show_menu(vector<string>names, vector<int>&wins, vector<int>&kills, int tota
 {
     int menu_choice;
     cout << "Please choose from the following options:" << endl;
-    cout << "1. Randomize Player Order" << endl;
-    cout << "2. Enter Wins" << endl;
-    cout << "3. Enter Kills" << endl;
-    cout << "4. Exit" << endl;
+    cout << "1. Display Current Standings" << endl;
+    cout << "2. Shuffle Player Order" << endl;
+    cout << "3. Enter Wins" << endl;
+    cout << "4. Enter Kills" << endl;
+    cout << "5. Exit" << endl;
     cout << "Select and Press Enter: ";
     cin >> menu_choice;
     cout << endl;
-    
     if (menu_choice == 1)
     {
-        shuffle_players(names);
+        display_scores(names, wins, kills, total);
     }
     else if (menu_choice == 2)
     {
-        enter_wins(names, wins, total);
+        shuffle_players(names);
     }
     else if (menu_choice == 3)
     {
-        enter_kills(names, kills, total);
+        enter_wins(names, wins, total);
     }
     else if (menu_choice == 4)
+    {
+        enter_kills(names, kills, total);
+    }
+    else if (menu_choice == 5)
     {
         cout << "Exit" << endl;
     }
@@ -121,7 +124,7 @@ void shuffle_players(vector<string>names)
 void enter_wins(vector<string>names, vector<int>&wins, int total)
 {
     int menu_choice, num_wins;
-    cout << "Please select a player:" << endl;
+    cout << "Please select a player to add wins:" << endl;
     for (int i = 0; i < total; i++)
 	{
 		cout << (i + 1) << ". " << names[i] << endl;
@@ -196,7 +199,7 @@ void enter_wins(vector<string>names, vector<int>&wins, int total)
 void enter_kills(vector<string>names, vector<int>&kills, int total)
 {
     int menu_choice, num_kills;
-    cout << "Please select a player:" << endl;
+    cout << "Please select a player to add kills:" << endl;
     for (int i = 0; i < total; i++)
 	{
 		cout << (i + 1) << ". " << names[i] << endl;
