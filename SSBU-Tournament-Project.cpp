@@ -1,4 +1,4 @@
-//SSBU Tournament Project
+//Super Smash Bros - Tournament Tracker
 //By Jordan Cole
 
 #include <iostream>
@@ -17,6 +17,11 @@ void enter_kills(vector<string>names, vector<int>&kills, int total);
 
 int main()
 {
+    //Program introduction
+    cout << "Super Smash Bros - Tournament Tracker" << endl;
+    cout << "By Jordan Cole" << endl;
+    cout << endl;
+    
 	//Create var for player count
 	int total_players;
 
@@ -101,8 +106,8 @@ void display_scores(vector<string>names, vector<int>&wins, vector<int>&kills, in
 	{
 		cout << (i + 1) << ". " << names[i] << endl;
 		cout << "[Wins - " << wins[i] << ", Kills - " << kills[i] << "]" << endl;
+		cout << endl;
 	}
-    cout << endl;
 }
 
 //Function: Shuffle player order and display
