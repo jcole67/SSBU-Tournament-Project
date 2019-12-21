@@ -9,9 +9,9 @@
 using namespace std;
 
 //Function prototypes
-void shuffle_players(vector<string>names);
 int show_menu(vector<string>names, vector<int>&wins, vector<int>&kills, int total);
 void display_scores(vector<string>names, vector<int>&wins, vector<int>&kills, int total);
+void shuffle_players(vector<string>names);
 void enter_wins(vector<string>names, vector<int>&wins, int total);
 void enter_kills(vector<string>names, vector<int>&kills, int total);
 
