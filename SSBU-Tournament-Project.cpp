@@ -104,7 +104,7 @@ void display_scores(vector<string>names, vector<int>&wins, vector<int>&kills, in
     cout << "Current Standings:" << endl;
     for (int i = 0; i < total; i++)
 	{
-		cout << (i + 1) << ". " << names[i] << endl;
+		cout << names[i] << endl;
 		cout << "[Wins - " << wins[i] << ", Kills - " << kills[i] << "]" << endl;
 		cout << endl;
 	}
